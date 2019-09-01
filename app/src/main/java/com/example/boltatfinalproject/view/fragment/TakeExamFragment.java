@@ -76,6 +76,8 @@ public class TakeExamFragment extends Fragment implements AnswerInterface {
                 tvTitle.setText(questions.get(currentQuestionPosition).getTitle());
                 mAnswerViewModel.getDataForQuestion(questions.get(currentQuestionPosition).getId(), TakeExamFragment.this);
                 currentQuestionPosition++;
+                tvQuestionSit.setText(currentQuestionPosition+"of " + mQuestions.size());
+
             }
         });
 
@@ -189,7 +191,7 @@ public class TakeExamFragment extends Fragment implements AnswerInterface {
                         wrong++;
                         showDialog();
                     } else {
-                        tvQuestionSit.setText(currentQuestionPosition+"of " + mQuestions.size());
+                        tvQuestionSit.setText(++currentQuestionPosition+"of " + mQuestions.size());
                         tvTitle.setText(mQuestions.get(currentQuestionPosition).getTitle());
                         mAnswerViewModel.getDataForQuestion(mQuestions.get(currentQuestionPosition).getId(), TakeExamFragment.this);
                         currentQuestionPosition++;
