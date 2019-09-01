@@ -319,13 +319,13 @@ public class CreateExamFragment extends Fragment {
         }
         mAnswerViewModel.insert(answersObj);
         resetQuestionAndAnswers();
+        txtQuestionsStatus.setText("Question: " + (++questionCounter));
+
     }
 
     private void saveTest(String examTitle) {
         Exam exam = new Exam(0, examTitle);
         mExamViewModel.insert(exam);
-        txtQuestionsStatus.setText("Question: " + (++questionCounter));
-
     }
 
     private void saveQuestion(long examId) {
