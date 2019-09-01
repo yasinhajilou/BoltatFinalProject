@@ -107,7 +107,6 @@ public class CreateExamFragment extends Fragment {
                     //so we can add question with exam id
                     examId = aLong;
                     saveQuestion(examId);
-                    Toast.makeText(getContext(), "exam added added", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -116,7 +115,6 @@ public class CreateExamFragment extends Fragment {
             public void onChanged(Long aLong) {
                 //prevent to running this scope in fragment start up
                 if (d > 0) {
-                    Toast.makeText(getContext(), "OneQuestion added", Toast.LENGTH_SHORT).show();
                     questionCounter++;
                     saveAnswers(aLong);
                 }
