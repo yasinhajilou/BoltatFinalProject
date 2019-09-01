@@ -96,6 +96,8 @@ public class CreateExamFragment extends Fragment {
         mAnswerViewModel = ViewModelProviders.of(getActivity()).get(AnswerViewModel.class);
 
 
+        txtQuestionsStatus.setText("Question: " + (++questionCounter));
+
         mExamViewModel.getExamMutableLiveData().observe(getViewLifecycleOwner(), new Observer<Long>() {
             @Override
             public void onChanged(Long aLong) {
@@ -322,12 +324,13 @@ public class CreateExamFragment extends Fragment {
     private void saveTest(String examTitle) {
         Exam exam = new Exam(0, examTitle);
         mExamViewModel.insert(exam);
+        txtQuestionsStatus.setText("Question: " + (++questionCounter));
+
     }
 
     private void saveQuestion(long examId) {
         Question question = new Question(0, questionTitle, examId);
         mQuestionViewModel.insert(question);
-        txtQuestionsStatus.setText("Question: " + (++questionCounter));
     }
 
     private void resetQuestionAndAnswers() {
