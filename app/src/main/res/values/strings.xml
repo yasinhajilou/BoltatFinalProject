@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BoltatFinalProject</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="do_some_test">Do Some Test!</string>
+    <string name="open">Open</string>
+    <string name="create_your_own_tests">Create Your Own Tests.</string>
+    <string name="create">Create</string>
+    <string name="test_title">Test Title</string>
+    <string name="put_question_here">Type Question Here</string>
+    <string name="_1">1:</string>
+    <string name="_2">2:</string>
+    <string name="_3">3:</string>
+    <string name="_4">4:</string>
+    <string name="question_1">Question 1:</string>
+    <string name="correct">Correct</string>
+</resources>
