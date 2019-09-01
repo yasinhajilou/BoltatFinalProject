@@ -191,10 +191,9 @@ public class TakeExamFragment extends Fragment implements AnswerInterface {
                         wrong++;
                         showDialog();
                     } else {
+                        tvTitle.setText(mQuestions.get(currentQuestionPosition-1).getTitle());
+                        mAnswerViewModel.getDataForQuestion(mQuestions.get(currentQuestionPosition-1).getId(), TakeExamFragment.this);
                         tvQuestionSit.setText(++currentQuestionPosition+"of " + mQuestions.size());
-                        tvTitle.setText(mQuestions.get(currentQuestionPosition).getTitle());
-                        mAnswerViewModel.getDataForQuestion(mQuestions.get(currentQuestionPosition).getId(), TakeExamFragment.this);
-                        currentQuestionPosition++;
                         wrong++;
                     }
                 }
