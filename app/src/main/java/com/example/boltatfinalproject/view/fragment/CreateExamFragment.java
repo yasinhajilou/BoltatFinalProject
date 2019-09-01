@@ -207,7 +207,7 @@ public class CreateExamFragment extends Fragment {
                     msg = "You didn't make any Test,Are you want to leave?";
                     positive = "yes";
                 } else {
-                    msg = String.format("%s Test was made successfully with %d Question(s)", examTitle, questionCounter);
+                    msg = String.format("%s Test was made successfully with %d Question(s)", examTitle, questionCounter-1);
                     positive = "okay";
                 }
 
