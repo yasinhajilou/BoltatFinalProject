@@ -327,7 +327,7 @@ public class CreateExamFragment extends Fragment {
     private void saveQuestion(long examId) {
         Question question = new Question(0, questionTitle, examId);
         mQuestionViewModel.insert(question);
-        txtQuestionsStatus.setText(String.valueOf(questionCounter));
+        txtQuestionsStatus.setText("Question: " + (++questionCounter));
     }
 
     private void resetQuestionAndAnswers() {
