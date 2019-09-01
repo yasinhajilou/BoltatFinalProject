@@ -69,7 +69,7 @@ public class CreateExamFragment extends Fragment {
     private String[] answers = new String[4];
 
     //count questions that saved into db
-    int questionCounter;
+    int questionCounter = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -96,7 +96,7 @@ public class CreateExamFragment extends Fragment {
         mAnswerViewModel = ViewModelProviders.of(getActivity()).get(AnswerViewModel.class);
 
 
-        txtQuestionsStatus.setText("Question: " + (++questionCounter));
+        txtQuestionsStatus.setText("Question: " + questionCounter);
 
         mExamViewModel.getExamMutableLiveData().observe(getViewLifecycleOwner(), new Observer<Long>() {
             @Override
@@ -115,7 +115,6 @@ public class CreateExamFragment extends Fragment {
             public void onChanged(Long aLong) {
                 //prevent to running this scope in fragment start up
                 if (d > 0) {
-                    questionCounter++;
                     saveAnswers(aLong);
                 }
             }
